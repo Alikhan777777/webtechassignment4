@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(45deg, #cf1515, #0c5fe4ff, #8490a2);
+    animation: anim-bg 8s linear infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes anim-bg {
+    0% {
+        background-position:0% 50%;
+    }
+    50% {
+        background-position:100% 0%;
+    }
+    100% {
+        background-position:0% 50%;
+    }
+}
+
+h1 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    background-color: #e2dbdb;
+    nav {
+        display: flex;
+        align-items: center;
+        img {
+            margin: 8px 16px;
+        }
+        .dropdown-btn {
+            display: none;
+        }
+        ul { 
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            li {
+                margin: 0 16px;
+                transition: all 0.3s ease;
+                :hover {
+                    text-shadow: 0 0 5px rgb(253, 254, 255);
+
+                }
+            }
+        }   
+    }
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 90%;
+    margin: 0 5%;
+    top: 100px;
+}
+
+.card1, .card2, .card3, .card4 {
+    width: 25%;
+    height: max-content;
+    margin: 16px;
+    font-size: 24px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    text-align:center;
+    transition: all 0.35s ease;
+    h6 {
+        font-size: 24px;
+    }
+    button {
+        margin: 16px;
+        padding: 8px 16px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.card1:hover, .card2:hover, .card3:hover, .card4:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.08);
+}
+
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        .card1, .card2, .card3, .card4 {
+            width: 40%;
+            margin: 10% auto;
+            height: fit-content;
+        }
+    }
+}
+
+/* @media (max-width: 600px) {
+    .main-content {
+        flex-direction: column;
+        .card1, .card2, .card3, .card4 {
+            width: 100%;
+            margin: 0% auto 20% auto;
+            height: fit-content;
+            font-size: 24px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.35s ease;
+            h6 {
+                font-size: 24px;
+            }
+            button {
+                margin: 16px;
+                padding: 8px 16px;
+                font-size: 18px;
+                border: none;
+                border-radius: 5px;
+                background-color: #007BFF;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+    nav li .dropdown-btn {
+        display: block;
+        margin: 8px 16px;
+        cursor: pointer;
+    }
+    
+    nav .dropdown {
+        display: none;
+    }
+
+    nav li .dropdown-btn:hover .dropdown {
+        display: block;
+    }
+} */
+@media (max-width: 600px) {
+    .main-content {
+        flex-direction: column;
+        .card1, .card2, .card3, .card4 {
+            width: 100%;
+            margin: 0% auto 20% auto;
+            height: fit-content;
+            font-size: 24px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.35s ease;
+            h6 {
+                font-size: 24px;
+            }
+            button {
+                margin: 16px;
+                padding: 8px 16px;
+                font-size: 18px;
+                border: none;
+                border-radius: 5px;
+                background-color: #007BFF;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+
+    nav li .dropdown-btn {
+        display: block;
+        margin: 8px 16px;
+        cursor: pointer;
+    }
+    
+    nav .dropdown {
+        display: none;
+        flex-direction: column;
+        background: #e2dbdb;
+        padding: 10px;
+    }
+
+    nav li:hover .dropdown {
+        display: flex;
+    }
+}
